@@ -20,12 +20,15 @@ import (
 
 	_ "github.com/devopsmi/daemon/daemon" //仅导入，包的init方法被自动调用，嵌入daemon功能
 	"github.com/labstack/echo"
+	"github.com/labstack/echo/middleware"
 	"github.com/labstack/gommon/log"
 )
 
 func main() {
 	// Setup
 	e := echo.New()
+	e.Use(middleware.CORS())
+	e.Use(middleware.Recover())
 	e.Logger.SetLevel(log.INFO)
 	e.GET("/", func(c echo.Context) error {
 		//time.Sleep(5 * time.Second)
