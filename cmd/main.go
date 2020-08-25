@@ -7,7 +7,7 @@ import (
 	"os/signal"
 	"time"
 
-	_ "github.com/devopsmi/daemon/daemon" //仅导入，包的init方法被自动调用，嵌入daemon功能
+	_ "github.com/devopsmi/daemon" //仅导入，包的init方法被自动调用，嵌入daemon功能
 	"github.com/labstack/echo"
 	"github.com/labstack/gommon/log"
 )
